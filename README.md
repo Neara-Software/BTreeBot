@@ -16,7 +16,7 @@ https://robocode-dev.github.io/tank-royale/articles/anatomy.html
 ## Running as host
 Unzip the included compiled sample bots
 ```bash
-unzip sample-bots-java-0.19.2.zip
+unzip sample-bots-java-0.19.2.zip -d $YourFolder
 ```
 
 Run the host application
@@ -24,7 +24,7 @@ Run the host application
 java -jar robocode-tankroyale-gui-0.19.2.jar
 ```
 
-1. Go to `Config->Bot root directories` and add the folder you just unzipped
+1. Go to `Config->Bot root directories` and add the $YourFolder
 2. Start the server
 3. Start game and set the mode to "classic", load all the bots you want to run and click start
 
@@ -36,7 +36,16 @@ java -jar robocode-tankroyale-gui-0.19.2.jar
 
 Full instructions for the JVM is available in the official docs: https://robocode-dev.github.io/tank-royale/tutorial/jvm/my-first-bot-for-jvm.html
 
-For using this repo as a template, add logic to `BTreeBot.kt` and compile. You should get a final folder in BTreeBot. Send that BTreeBot folder to the host.
+To build your tank in Kotlin, you could use this repo as a template:
+1. In folder 'src/main/kotlin/org/example', add logic to 'BTreeBot.kt'.
+2. Compile:
+```
+./gradlew shadowJar
+```
+The compiled BTreeBot.jar will be inside the BTreeBot folder. 
+
+3. Send that BTreeBot folder to the host.
+4. To test your bot, following the steps in Running as a host. And copy BTreeBot folder in $YourFolder.
 
 ## Competition agenda 
 We'll run a series of rounds and use the scoring system built into Tank Royale to determine the winner. The general agenda would be:

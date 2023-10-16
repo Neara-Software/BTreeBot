@@ -23,6 +23,6 @@ class BTreeBot: Bot(BotInfo.fromFile("BTreeBot.json")) {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     BTreeBot().start()
 }
