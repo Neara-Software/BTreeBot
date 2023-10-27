@@ -1,4 +1,5 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import java.net.URI
 
 plugins {
     kotlin("jvm") version "1.8.0"
@@ -15,12 +16,13 @@ application {
 
 repositories {
     mavenCentral()
+    maven {url = URI("https://jitpack.io") }
 }
 
 dependencies {
     // https://mvnrepository.com/artifact/dev.robocode.tankroyale/robocode-tankroyale-bot-api
     implementation("dev.robocode.tankroyale:robocode-tankroyale-bot-api:0.19.2")
-
+    //implementation("com.github.Typiqally:kt-behaviour-tree:1.0.2")
     testImplementation(kotlin("test"))
 }
 
